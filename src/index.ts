@@ -82,6 +82,13 @@ export class CanvasRenderService {
 		return canvas.pngStream();
 	}
 
+	public renderToPDFStream(configuration: ChartConfiguration): Stream {
+
+		const chart = this.renderChart(configuration);
+		const canvas = chart.canvas as any;
+		return canvas.pdfStream()
+	}
+
 	private renderChart(configuration: ChartConfiguration): Chart {
 
 		const canvas = createCanvas(this._width, this._height);

@@ -36,5 +36,6 @@ export declare class CanvasRenderService {
      * @param configuration The Chart JS configuration for the chart to render.
      */
     renderToStream(configuration: ChartConfiguration): Stream;
+    renderToPDFStream(configuration: ChartConfiguration): Stream;
     private renderChart;
 }

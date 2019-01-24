@@ -66,6 +66,11 @@ class CanvasRenderService {
         const canvas = chart.canvas;
         return canvas.pngStream();
     }
+    renderToPDFStream(configuration) {
+        const chart = this.renderChart(configuration);
+        const canvas = chart.canvas;
+        return canvas.pdfStream();
+    }
     renderChart(configuration) {
         const canvas = canvas_1.createCanvas(this._width, this._height);
         // Disable animation (otherwise charts will throw exceptions)
