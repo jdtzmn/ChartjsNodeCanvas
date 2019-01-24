@@ -41,8 +41,9 @@ class CanvasRenderService {
      * @see https://github.com/Automattic/node-canvas#canvastobuffer
      *
      * @param configuration The Chart JS configuration for the chart to render.
+     * @param mimeType The node-canvas mimeType for the buffer to be formatted as
      */
-    renderToBuffer(configuration) {
+    renderToBuffer(configuration, mimeType) {
         const chart = this.renderChart(configuration);
         return new Promise((resolve, reject) => {
             const canvas = chart.canvas;
@@ -51,7 +52,7 @@ class CanvasRenderService {
                     return reject(error);
                 }
                 return resolve(buffer);
-            });
+            }, mimeType);
         });
     }
     /**

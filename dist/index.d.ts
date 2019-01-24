@@ -26,8 +26,9 @@ export declare class CanvasRenderService {
      * @see https://github.com/Automattic/node-canvas#canvastobuffer
      *
      * @param configuration The Chart JS configuration for the chart to render.
+     * @param mimeType The node-canvas mimeType for the buffer to be formatted as
      */
-    renderToBuffer(configuration: ChartConfiguration): Promise<Buffer>;
+    renderToBuffer(configuration: ChartConfiguration, mimeType?: string): Promise<Buffer>;
     /**
      * Render to a stream as png.
      * @see https://github.com/Automattic/node-canvas#canvascreatepngstream
