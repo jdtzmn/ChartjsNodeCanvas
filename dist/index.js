@@ -1,7 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const canvas_1 = require("canvas");
-const fresh = require("fresh-require");
 class CanvasRenderService {
     /**
      * Create a new instance of CanvasRenderService.
@@ -13,7 +12,7 @@ class CanvasRenderService {
     constructor(width, height, chartCallback) {
         this._width = width;
         this._height = height;
-        this._ChartJs = fresh('chart.js', require);
+        this._ChartJs = require('chart.js');
         if (chartCallback) {
             chartCallback(this._ChartJs);
         }
